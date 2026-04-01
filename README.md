@@ -73,10 +73,16 @@ pip install -r requirements.txt
 
 ### Usage
 
-Open the notebook in VS Code:
-```sh
-code energy_storage_analytics.ipynb
-```
+### Usage
+
+All notebooks are in the `notebooks/` folder. Open and run in order:
+
+| Notebook | Description |
+|---|---|
+| 01_load_merge_analyse.ipynb | Load, merge and analyse storage unit data |
+| 02_sumifs_averageifs.ipynb | Filter and summarise data using pandas |
+| 03_interactive_charts.ipynb | Interactive visualisations with Plotly |
+| 04_cost_effectiveness.ipynb | Cost-effectiveness scoring per unit |
 
 Then run all cells from top to bottom using **Run All**.
 
