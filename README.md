@@ -5,6 +5,7 @@
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
   - [Key Features](#key-features)
+  - [📊 Sample Outputs](#sample-outputs)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -19,31 +20,52 @@
 
 # 📖 Energy Storage Analytics <a name="about-project"></a>
 
-> A Python data analysis project exploring the technical characteristics of battery storage units connected across a power grid.
+> A Python data analysis project exploring the technical characteristics 
+> of 25 battery storage units connected across a 5-bus power grid.
 
-This project loads, merges, and analyses real-world-style storage data for 25 battery units. It computes key metrics including **energy capacity**, and visualises performance by bus and efficiency using pandas and matplotlib.
+This project loads, merges, analyses and visualises real-world-style 
+storage data. It computes key metrics including energy capacity, filters 
+and summarises data using pandas, builds interactive visualisations using 
+Plotly, and ranks storage units using a weighted cost-effectiveness 
+scoring model.
 
-This is Course 1 of 8 in the **Energy Data Scientist** series, completed under the mentorship of **Dr. Spyros Giannelos (Imperial College London)** via the Skool platform.
+**Key formula:** 
 
-**Key formula:**
-```
-Energy Capacity (kWh) = Power Capability (kW) × Duration (hours)
-```
+```Energy Capacity (kWh) = Power Capability (kW) × Duration (hours) ```
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack
 
 - **Language:** Python 3.13
-- **Libraries:** pandas, matplotlib, openpyxl
+- **Libraries:** pandas, matplotlib, plotly, openpyxl
 - **Environment:** Jupyter Notebook (VS Code)
 
 ### Key Features <a name="key-features"></a>
 
-- **Data merging** — combines two datasets using pandas `.map()` 
+- **Data merging** : combines two datasets using pandas `.map()` 
   (Python equivalent of Excel VLOOKUP)
-- **Energy capacity computation** — calculates capacity for all 25 storage units
-- **Visual analysis** — charts comparing storage performance across grid buses
+- **Energy capacity computation** : calculates capacity for all 25 storage units
+- **Conditional filtering** : replicates Excel SUMIFS and AVERAGEIFS 
+  using pandas boolean filtering
+- **Interactive visualisations** : Plotly charts with hover tooltips 
+  and legend interactivity
+- **Cost-effectiveness scoring** : weighted ranking model combining 
+  efficiency, capacity and duration
+- **Data quality analysis** : identifies and fixes inconsistencies 
+  in the original dataset
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## 📊 Sample Outputs <a name="sample-outputs"></a>
+
+![Cost-Effectiveness Ranking](assets/ranking_chart.png)
+
+![Efficiency vs Capacity](assets/scatter_plot.png)
+
+![Score Table](assets/score_table.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -73,8 +95,6 @@ pip install -r requirements.txt
 
 ### Usage
 
-### Usage
-
 All notebooks are in the `notebooks/` folder. Open and run in order:
 
 | Notebook | Description |
@@ -82,9 +102,9 @@ All notebooks are in the `notebooks/` folder. Open and run in order:
 | 01_load_merge_analyse.ipynb | Load, merge and analyse storage unit data |
 | 02_sumifs_averageifs.ipynb | Filter and summarise data using pandas |
 | 03_interactive_charts.ipynb | Interactive visualisations with Plotly |
-| 04_cost_effectiveness.ipynb | Cost-effectiveness scoring per unit |
+| 04_cost_effectiveness.ipynb | Cost-effectiveness scoring per storage unit |
 
-Then run all cells from top to bottom using **Run All**.
+Run all cells from top to bottom using **Run All**.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -95,7 +115,7 @@ Then run all cells from top to bottom using **Run All**.
 👤 **Natasha Chirombe**
 
 - GitHub: [@NATASHA-ct](https://github.com/NATASHA-ct)
-- LinkedIn: [Natasha Chirombe]( https://www.linkedin.com/in/natashatatendachirombe/)
+- LinkedIn: [Natasha Chirombe](https://www.linkedin.com/in/natashatatendachirombe/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,9 +123,9 @@ Then run all cells from top to bottom using **Run All**.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] Translate Excel SUMIFS/AVERAGEIFS analysis to pandas
-- [ ] Add interactive charts using Plotly
-- [ ] Extend analysis to include efficiency-weighted capacity scoring
+- [ ] Incorporate real capital cost data (£/kWh) into the scoring model
+- [ ] Build a Streamlit dashboard with adjustable scoring weights
+- [ ] Apply scoring methodology to a larger real-world grid dataset
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
