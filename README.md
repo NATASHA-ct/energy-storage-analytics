@@ -5,6 +5,7 @@
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
   - [Key Features](#key-features)
+  - [Key Findings](#key-findings)
   - [📊 Sample Outputs](#sample-outputs)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -54,6 +55,45 @@ scoring model.
   efficiency, capacity and duration
 - **Data quality analysis** : identifies and fixes inconsistencies 
   in the original dataset
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## 📈 Key Findings <a name="key-findings"></a>
+
+Analysis of 25 battery storage units across a 5-bus power grid revealed 
+the following:
+
+**Data Quality:**
+- stor999 was recorded as "bus 2" instead of "bus_2" ; causing it to be 
+  excluded from grouped analysis entirely until corrected. Small naming 
+  inconsistencies can quietly distort results at grid scale.
+
+**Energy Capacity:**
+- bus_1 has the highest total energy capacity at 1,099 kWh across 7 storage units.
+- stor11 on bus_5 has the highest individual energy capacity at 516 kWh ; 
+  driven by a combination of high power capability (86 kW) and long duration (6 hours).
+
+**Conditional Analysis:**
+- Only 9 out of 25 storage units have efficiency above 0.85.
+- Only 3 storage units simultaneously meet both high efficiency AND 
+  long duration conditions.
+- When efficiency is used as a filter, bus_5 becomes the strongest 
+  performer ; replacing bus_1 which dominated raw totals.
+
+**Cost-Effectiveness Scoring:**
+- stor11 ranks 1st with a score of 0.87.
+- stor24 ranks 2nd despite low efficiency (0.75) ; its exceptional 
+  capacity (468 kWh) compensates. This highlights a key limitation ; 
+  large but inefficient storage units can rank highly in capacity-weighted models.
+- stor17 has the highest efficiency (0.90) but ranks only 6th ; 
+  proving efficiency alone is insufficient without sufficient capacity.
+
+**Engineering Implication:**
+Raw capacity totals are misleading without efficiency context. A storage 
+unit operating at 65% efficiency wastes 35% of input energy every 
+charge/discharge cycle ; a significant operational and financial cost at grid scale.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
